@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body{
+    background:black;
+    font:20pt arial black;
+    color:rgb(234, 248, 153);
+    text-align:center;
+}
+#informacao{
+    color: red;
+    font: 11pt;
+}
+header{
+    text-align:center;
+}
+section{
+    text-align:center;
+    margin:auto;
+    width:601px;
+    background:rgb(160, 159, 159);
+    padding:10px;
+    border-radius:10px;
+    color:rgb(219, 213, 213);
+    box-shadow:5px 5px 5px black;
+    
+}
+section:hover{
+    /*background:rgba(255, 255, 255, 0.548);*/
+    transition:1s
+}
+footer{
+    font-style:italic;
+    font:18pt;
+}
+div#entradas{
+    width:500px;
+    margin: auto;
+    border:solid 5px white;
+    border-radius:10px;
+    padding:10px 20px 20px;
+    box-shadow:2px 3px 4px black;
+}
+#entradas:hover{
+    background:rgb(177, 175, 175);
+    transition:1s
+}
+div#res{
+    background:rgb(168, 166, 166);
+    width:500;
+    height: 70px;
+    border-radius:10px;
+    margin-top:10px;
+    padding:5px 1, 1, 1;
+    border:solid 5px white;
+    box-shadow:3px 3px 3px black;
+}
+#res:hover{
+    background:rgba(255, 255, 255, 0.212);
+    transition:1s
+}
+#mais, #menos, #vezes, #dividir, #apagar{
+    width: 50px;
+    height:40px;
+    background:rgb(168, 166, 166);
+    display:inline-block;
+    margin-top: 20px;
+    line-height:0px;
+    border-radius:10px;
+    padding:1px 3px 3px 3px;
+    cursor:pointer;
+    
+}
+div#mais:hover, #menos:hover, #vezes:hover, #dividir:hover, #apagar:hover{
+    background:black;
+    transition:1s
+}
+select{
+    width:70px
+}
+input{
+    border-radius:5px;
+    text-align:center;
+}
+
+    </style>
+</head>
+<body>
+    <header id='informacao'>*Em breve mais operacões e funcionalidades...</header>
+    <header class='principal'><h1>Calculator</h1></header>
+    
+    <section>
+        <div id='entradas'>
+            <input type='number' id='num1'>
+
+            <input type='number' id='num2'><br>
+            
+            <div id="mais" onmouseenter='adicao()'><p>+</p></div>
+            <div id="menos" onmouseenter='subtracao()'><p>-</p></div>
+            <div id="vezes" onmouseenter="multiplicacao()"><p>x</p></div>
+            <div id='dividir' onmouseenter='divisao()'><p>/</p></div>
+            <div id='apagar' onmouseenter='apaguei()'><p>C</p></div>
+        
+            
+            <!--<input type='button' value='=' id='butao'>-->
+        </div>
+        <div id='res'>
+            <p>...</p>
+        </div>
+
+    </section>
+    <footer>
+        <p>&copy;Somando vidas</p>
+    </footer>
+    <script>
+        alerta()
+      var entradas = document.getElementById("entradas")
+      var res = document.getElementById("res")
+      var nume1 = document.getElementById('num1')
+      var nume2 = document.getElementById("num2")
+
+      var vezes = document.getElementById("vezes")
+      var dividir = document.getElementById("dividir")
+      var menos = document.getElementById("menos")
+      var mais = document.getElementById("mais")
+
+      
+     function adicao(){
+        var num1 = Number(nume1.value)
+        var num2 = Number(nume2.value)
+        res.innerHTML =` ${num1} + ${num2} = ${num1 - num2}`
+     }
+    
+
+     function subtracao(){
+        var num1 = Number(nume1.value)
+        var num2 = Number(nume2.value)
+        res.innerHTML =`${num1} - ${num2} = ${num1 + num2}`
+     }
+     function multiplicacao(){
+        var num1 = Number(nume1.value)
+        var num2 = Number(nume2.value)
+        res.innerHTML =`${num1} X ${num2} = ${num1 * num2}`
+     }
+     function divisao(){
+        var num1 = Number(nume1.value)
+        var num2 = Number(nume2.value)
+        res.innerHTML =`${num1} / ${num2} = ${num1 / num2}`
+     }
+     function apaguei(){
+        res.innerHTML='...'
+        num1.value = ''
+        num2.value = ''
+     }
+     function alerta(){
+        alert("Esse programa e ilimitado, coloque quantos numeros quiser")
+     }
+    </script>
+</body>
+</html>
